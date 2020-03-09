@@ -1,0 +1,1092 @@
+import java.util.*;
+import java.io.*;
+import javax.sound.sampled.*;
+import sun.audio.*;
+import Converter.*;
+public class Project 
+{
+    static Scanner sc=new Scanner(System.in);
+    private static void chem()
+    {
+        String ch="";
+        do
+        {
+            System.out.println("Enter Atomic no. of elements from 1-100 (Enter 0 to stop the Chemistry Session)");
+            ch=sc.next();
+            switch(ch)
+            {
+                case "0":System.out.println("Good Bye \n");
+                        break;
+                case "1":System.out.println("Name :-- Hydrogen");
+                         System.out.println("Atomic no. :-- 1");
+                         System.out.println("Atomic Weight :-- 1");
+                         System.out.println("Electronic Configuration :-- 1");
+                         System.out.println("Metal as well as Non-Metal \n");
+                         break;
+                case "2":System.out.println("Name :-- Helium");       
+                         System.out.println("Atomic no. :-- 2");
+                         System.out.println("Atomic Weight :-- 4");
+                         System.out.println("Electronic Configuration :-- 2");
+                         System.out.println("Nobal Gas\n");
+                         break;
+                case "3":System.out.println("Name :-- Lithium");       
+                        System.out.println("Atomic no. :-- 3");
+                        System.out.println("Atomic Weight :-- 7");
+                        System.out.println("Electronic Configuration :-- 2,1");
+                        System.out.println("Metal \n");
+                        break;
+                case "4":System.out.println("Name :-- Beryllium");       
+                        System.out.println("Atomic no. :-- 4");
+                        System.out.println("Atomic Weight :-- 9");
+                        System.out.println("Electronic Configuration :-- 2,2");
+                        System.out.println("Metal \n");
+                        break;
+                case "5":System.out.println("Name :-- Boron");       
+                        System.out.println("Atomic no. :-- 5");
+                        System.out.println("Atomic Weight :-- 11");
+                        System.out.println("Electronic Configuration :-- 2,3");
+                        System.out.println("Non-Metal \n");
+                        break;
+                case "6":System.out.println("Name :-- Carbon");       
+                        System.out.println("Atomic no. :-- 6");
+                        System.out.println("Atomic Weight :-- 12");
+                        System.out.println("Electronic Configuration :-- 2,4");
+                        System.out.println("Non-Metal \n");
+                        break;
+                case "7":System.out.println("Name :-- Nitrogen");       
+                        System.out.println("Atomic no. :-- 7");
+                        System.out.println("Atomic Weight :-- 14");
+                        System.out.println("Electronic Configuration :-- 2,5");
+                        System.out.println("Non-Metal \n");                        
+                        break;
+                case "8":System.out.println("Name :-- Oxygen");       
+                        System.out.println("Atomic no. :-- 8");
+                        System.out.println("Atomic Weight :-- 16");
+                        System.out.println("Electronic Configuration :-- 2,6");
+                        System.out.println("Non-Metal \n");
+                        break;
+                case "9":System.out.println("Name :-- Flourine");       
+                        System.out.println("Atomic no. :-- 9");
+                        System.out.println("Atomic Weight :-- 19");
+                        System.out.println("Electronic Configuration :-- 2,7");
+                        System.out.println("Non-Metal \n");
+                        break;
+                case "10":System.out.println("Name :-- Neon");       
+                        System.out.println("Atomic no. :-- 10");
+                        System.out.println("Atomic Weight :-- 20");
+                        System.out.println("Electronic Configuration :-- 2,8");
+                        System.out.println("Nobal Gas\n");
+                        break;
+                case "11":System.out.println("Name :-- Sodium");       
+                        System.out.println("Atomic no. :-- 11");
+                        System.out.println("Atomic Weight :-- 23");
+                        System.out.println("Electronic Configuration :-- 2,8,1");
+                        System.out.println("Metal \n");
+                        break;
+                case "12":System.out.println("Name :-- Magnesium");       
+                       System.out.println("Atomic no. :-- 12");
+                       System.out.println("Atomic Weight :-- 24");
+                       System.out.println("Electronic Configuration :-- 2,8,2");
+                       System.out.println("Metal \n");
+                       break;
+                case "13":System.out.println("Name :-- Aluminium");       
+                        System.out.println("Atomic no. :-- 13");
+                        System.out.println("Atomic Weight :-- 27");
+                        System.out.println("Electronic Configuration :-- 2,8,3");
+                        System.out.println("Metal \n");
+                        break;
+                case "14":System.out.println("Name :-- Silicon");       
+                        System.out.println("Atomic no. :-- 14");
+                        System.out.println("Atomic Weight :-- 28");
+                        System.out.println("Electronic Configuration :-- 2,8,4");
+                        System.out.println("Non-Metal \n");
+                        break;
+                case "15":System.out.println("Name :-- Phosphorus");       
+                        System.out.println("Atomic no. :-- 15");
+                        System.out.println("Atomic Weight :-- 31");
+                        System.out.println("Electronic Configuration :-- 2,8,5");
+                        System.out.println("Non-Metal \n");
+                        break;
+                case "16":System.out.println("Name :-- Sulphur");       
+                         System.out.println("Atomic no. :-- 16");
+                         System.out.println("Atomic Weight :-- 32");
+                         System.out.println("Electronic Configuration :-- 2,8,6");
+                         System.out.println("Non-Metal \n");
+                         break;
+                case "17":System.out.println("Name :-- Chlorine");       
+                        System.out.println("Atomic no. :-- 17");
+                        System.out.println("Atomic Weight :-- 35.5");
+                        System.out.println("Electronic Configuration :-- 2,8,7");
+                        System.out.println("Non-Metal \n");
+                        break;
+                case "18":System.out.println("Name :-- Argon");       
+                          System.out.println("Atomic no. :-- 18");
+                          System.out.println("Atomic Weight :-- 40");
+                          System.out.println("Electronic Configuration :-- 2,8,8");
+                          System.out.println("Nobal Gas\n");
+                          break;
+                case "19":System.out.println("Name :-- Potassium");       
+                          System.out.println("Atomic no. :-- 19");
+                          System.out.println("Atomic Weight :-- 39");
+                          System.out.println("Electronic Configuration :-- 2,8,8,1");
+                          System.out.println("Metal \n");
+                          break;
+                case "20":System.out.println("Name :-- Calcium");       
+                          System.out.println("Atomic no. :-- 20");
+                          System.out.println("Atomic Weight :-- 40");
+                          System.out.println("Electronic Configuration :-- 2,8,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "21":System.out.println("Name :-- Scandium");       
+                          System.out.println("Atomic no. :-- 21");
+                          System.out.println("Atomic Weight :-- 45");
+                          System.out.println("Electronic Configuration :-- 2,8,9,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "22":System.out.println("Name :-- Titanium");       
+                          System.out.println("Atomic no. :-- 22");
+                          System.out.println("Atomic Weight :-- 48");
+                          System.out.println("Electronic Configuration :-- 2,8,10,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "23":System.out.println("Name :-- Vanadium");       
+                          System.out.println("Atomic no. :-- 24");
+                          System.out.println("Atomic Weight :-- 51");
+                          System.out.println("Electronic Configuration :-- 2,8,11,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "24":System.out.println("Name :-- Chromium");       
+                          System.out.println("Atomic no. :-- 24");
+                          System.out.println("Atomic Weight :-- 40");
+                          System.out.println("Electronic Configuration :-- 2,8,13,1");
+                          System.out.println("Metal \n");
+                          break;
+                case "25":System.out.println("Name :-- Manganese");       
+                          System.out.println("Atomic no. :-- 25");
+                          System.out.println("Atomic Weight :-- 55");
+                          System.out.println("Electronic Configuration :-- 2,8,13,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "26":System.out.println("Name :-- Iron");       
+                          System.out.println("Atomic no. :-- 26");
+                          System.out.println("Atomic Weight :-- 56");
+                          System.out.println("Electronic Configuration :-- 2,8,14,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "27":System.out.println("Name :-- Cobalt");       
+                          System.out.println("Atomic no. :-- 27");
+                          System.out.println("Atomic Weight :-- 59");
+                          System.out.println("Electronic Configuration :-- 2,8,15,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "28":System.out.println("Name :-- Nickel");       
+                          System.out.println("Atomic no. :-- 28");
+                          System.out.println("Atomic Weight :-- 59");
+                          System.out.println("Electronic Configuration :-- 2,8,16,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "29":System.out.println("Name :-- Copper");       
+                          System.out.println("Atomic no. :-- 29");
+                          System.out.println("Atomic Weight :-- 63.5");
+                          System.out.println("Electronic Configuration :-- 2,8,18,1");
+                          System.out.println("Metal \n");
+                          break;
+                case "30":System.out.println("Name :-- Zinc");       
+                          System.out.println("Atomic no. :-- 30");
+                          System.out.println("Atomic Weight :-- 65");
+                          System.out.println("Electronic Configuration :-- 2,8,18,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "31":System.out.println("Name :-- Gallium");       
+                          System.out.println("Atomic no. :-- 31");
+                          System.out.println("Atomic Weight :-- 70");
+                          System.out.println("Electronic Configuration :-- 2,8,18,3");
+                          System.out.println("Metal \n");
+                          break;
+                case "32":System.out.println("Name :-- Germanium");       
+                          System.out.println("Atomic no. :-- 32");
+                          System.out.println("Atomic Weight :-- 73");
+                          System.out.println("Electronic Configuration :-- 2,8,18,4");
+                          System.out.println("Non-Metal \n");
+                          break;
+                case "33":System.out.println("Name :-- Arsenic");       
+                          System.out.println("Atomic no. :-- 33");
+                          System.out.println("Atomic Weight :-- 75");
+                          System.out.println("Electronic Configuration :-- 2,8,18,5");
+                          System.out.println("Non-Metal \n");
+                          break;
+                case "34":System.out.println("Name :-- Selenium");       
+                          System.out.println("Atomic no. :-- 34");
+                          System.out.println("Atomic Weight :-- 79");
+                          System.out.println("Electronic Configuration :-- 2,8,18,6");
+                          System.out.println("Non-Metal \n");
+                          break;
+                case "35":System.out.println("Name :-- Bromine");       
+                          System.out.println("Atomic no. :-- 35");
+                          System.out.println("Atomic Weight :-- 80");
+                          System.out.println("Electronic Configuration :-- 2,8,18,7");
+                          System.out.println("Non-Metal \n");
+                          break;
+                case "36":System.out.println("Name :-- Krypton");       
+                          System.out.println("Atomic no. :-- 36");
+                          System.out.println("Atomic Weight :-- 84");
+                          System.out.println("Electronic Configuration :-- 2,8,18,8");
+                          System.out.println("Nobal Gas\n");
+                          break;
+                case "37":System.out.println("Name :-- Rubidium");       
+                          System.out.println("Atomic no. :-- 37");
+                          System.out.println("Atomic Weight :-- 85.5");
+                          System.out.println("Electronic Configuration :-- 2,8,18,8,1");
+                          System.out.println("Metal \n");
+                          break;
+                case "38":System.out.println("Name :-- Strontium");       
+                          System.out.println("Atomic no. :-- 38");
+                          System.out.println("Atomic Weight :-- 88");
+                          System.out.println("Electronic Configuration :-- 2,8,18,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "39":System.out.println("Name :-- Yttrium");       
+                          System.out.println("Atomic no. :-- 39");
+                          System.out.println("Atomic Weight :-- 89");
+                          System.out.println("Electronic Configuration :-- 2,8,18,9,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "40":System.out.println("Name :-- Zicronium");       
+                          System.out.println("Atomic no. :-- 40");
+                          System.out.println("Atomic Weight :-- 91");
+                          System.out.println("Electronic Configuration :-- 2,8,18,10,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "41":System.out.println("Name :-- Niobium");       
+                          System.out.println("Atomic no. :-- 41");
+                          System.out.println("Atomic Weight :-- 93");
+                          System.out.println("Electronic Configuration :-- 2,8,18,12,1");
+                          System.out.println("Metal \n");
+                          break;
+                case "42":System.out.println("Name :-- Molybdenum");       
+                          System.out.println("Atomic no. :-- 42");
+                          System.out.println("Atomic Weight :-- 96");
+                          System.out.println("Electronic Configuration :-- 2,8,18,13,1");
+                          System.out.println("Metal \n");
+                          break;
+                case "43":System.out.println("Name :-- Technetium");       
+                          System.out.println("Atomic no. :-- 43");
+                          System.out.println("Atomic Weight :-- 99");
+                          System.out.println("Electronic Configuration :-- 2,8,18,13,2");
+                          System.out.println("Metal \n");
+                          break; 
+                case "44":System.out.println("Name :-- Ruthenium");       
+                          System.out.println("Atomic no. :-- 44");
+                          System.out.println("Atomic Weight :-- 101");
+                          System.out.println("Electronic Configuration :-- 2,8,18,15,1");
+                          System.out.println("Metal \n");
+                          break;
+                case "45":System.out.println("Name :-- Rhodium");       
+                          System.out.println("Atomic no. :-- 45");
+                          System.out.println("Atomic Weight :-- 103");
+                          System.out.println("Electronic Configuration :-- 2,8,18,16,1");
+                          System.out.println("Metal \n");
+                          break;
+                case "46":System.out.println("Name :-- Palladium");       
+                          System.out.println("Atomic no. :-- 46");
+                          System.out.println("Atomic Weight :-- 106.5");
+                          System.out.println("Electronic Configuration :-- 2,8,18,18");
+                          System.out.println("Metal \n");
+                          break;
+                case "47":System.out.println("Name:--Silver");       
+                          System.out.println("Atomic no. :-- 47");
+                          System.out.println("Atomic Weight :-- 108");
+                          System.out.println("Electronic Configuration :-- 2,8,18,18,1");
+                          System.out.println("Metal \n");
+                          break;
+                case "48":System.out.println("Name :-- Cadmium");       
+                          System.out.println("Atomic no. :-- 48");
+                          System.out.println("Atomic Weight :-- 112.5");
+                          System.out.println("Electronic Configuration :-- 2,8,18,18,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "49":System.out.println("Name :-- Indium");       
+                          System.out.println("Atomic no. :-- 49");
+                          System.out.println("Atomic Weight :-- 115");
+                          System.out.println("Electronic Configuration :-- 2,8,18,18,3");
+                          System.out.println("Metal \n");
+                          break;
+                case "50":System.out.println("Name :-- Tin");       
+                          System.out.println("Atomic no. :-- 50");
+                          System.out.println("Atomic Weight :-- 119");
+                          System.out.println("Electronic Configuration :-- 2,8,18,18,4");
+                          System.out.println("Metal \n");
+                          break;
+                case "51":System.out.println("Name :-- Antimony");       
+                          System.out.println("Atomic no. :-- 51");
+                          System.out.println("Atomic Weight :-- 122");
+                          System.out.println("Electronic Configuration :-- 2,8,18,18,5");
+                          System.out.println("Non-Metal \n");
+                          break;
+                case "52":System.out.println("Name :-Tellurium");       
+                          System.out.println("Atomic no. :-- 52");
+                          System.out.println("Atomic Weight :-- 128");
+                          System.out.println("Electronic Configuration :-- 2,8,18,18,6");
+                          System.out.println("Non-Metal \n");
+                          break;
+                case "53":System.out.println("Name :-- Iodine");       
+                          System.out.println("Atomic no. :-- 53");
+                          System.out.println("Atomic Weight :-- 127");
+                          System.out.println("Electronic Configuration :-- 2,8,18,18,7");
+                          System.out.println("Non-Metal \n");
+                          break;          
+                case "54":System.out.println("Name :-- Xenon");       
+                          System.out.println("Atomic no. :-- 54");
+                          System.out.println("Atomic Weight :-- 131");
+                          System.out.println("Electronic Configuration :-- 2,8,18,18,8");
+                          System.out.println("Nobal Gas\n");
+                          break;          
+                case "55":System.out.println("Name :-- Caesium");       
+                          System.out.println("Atomic no. :-- 55");
+                          System.out.println("Atomic Weight :-- 133");
+                          System.out.println("Electronic Configuration :-- 2,8,18,18,8,1");
+                          System.out.println("Metal \n");
+                          break;
+                case "56":System.out.println("Name :-- Barium");       
+                          System.out.println("Atomic no. :-- 56");
+                          System.out.println("Atomic Weight :-- 137");
+                          System.out.println("Electronic Configuration :-- 2,8,18,18,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "57":System.out.println("Name :-- Lanthanum");       
+                          System.out.println("Atomic no. :-- 57");
+                          System.out.println("Atomic Weight :-- 139");
+                          System.out.println("Electronic Configuration :-- 2,8,18,18,9,2,");
+                          System.out.println("Metal \n");
+                          break;
+                case "58":System.out.println("Name :-- Cerium");       
+                          System.out.println("Atomic no. :-- 58");
+                          System.out.println("Atomic Weight :-- 140");
+                          System.out.println("Electronic Configuration :-- 2,8,18,19,9,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "59":System.out.println("Name :-- Preseodymium");       
+                          System.out.println("Atomic no. :-- 59");
+                          System.out.println("Atomic Weight :-- 141");
+                          System.out.println("Electronic Configuration :-- 2,8,18,21,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "60":System.out.println("Name :-- Neodymium");       
+                          System.out.println("Atomic no. :-- 60");
+                          System.out.println("Atomic Weight :-- 144");
+                          System.out.println("Electronic Configuration :-- 2,8,18,22,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "61":System.out.println("Name :-- Promethium");       
+                          System.out.println("Atomic no. :-- 61");
+                          System.out.println("Atomic Weight :-- 145");
+                          System.out.println("Electronic Configuration :-- 2,8,18,23,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "62":System.out.println("Name :-- Samarium");       
+                          System.out.println("Atomic no. :-- 62");
+                          System.out.println("Atomic Weight :-- 150.5");
+                          System.out.println("Electronic Configuration :-- 2,8,18,24,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "63":System.out.println("Name :-- Europium");       
+                          System.out.println("Atomic no. :-- 63");
+                          System.out.println("Atomic Weight :-- 152");
+                          System.out.println("Electronic Configuration :-- 2,8,18,25,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "64":System.out.println("Name :-- Gadalinium");       
+                          System.out.println("Atomic no. :-- 64");
+                          System.out.println("Atomic Weight :-- 157");
+                          System.out.println("Electronic Configuration :-- 2,8,18,25,9,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "65":System.out.println("Name :-- Terbium");       
+                          System.out.println("Atomic no. :-- 65");
+                          System.out.println("Atomic Weight :-- 159");
+                          System.out.println("Electronic Configuration :-- 2,8,18,27,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "66":System.out.println("Name :-- Dysprasium");       
+                          System.out.println("Atomic no. :-- 66");
+                          System.out.println("Atomic Weight :-- 162.5");
+                          System.out.println("Electronic Configuration :-- 2,8,18,28,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "67":System.out.println("Name :--Halmium");       
+                          System.out.println("Atomic no. :-- 67");
+                          System.out.println("Atomic Weight :-- 165");
+                          System.out.println("Electronic Configuration :-- 2,8,18,29,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "68":System.out.println("Name :-- Erbium");       
+                          System.out.println("Atomic no. :-- 68");
+                          System.out.println("Atomic Weight :-- 167");
+                          System.out.println("Electronic Configuration :-- 2,8,18,30,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "69":System.out.println("Name :-- Thulium");       
+                          System.out.println("Atomic no. :-- 69");
+                          System.out.println("Atomic Weight :-- 169");
+                          System.out.println("Electronic Configuration :-- 2,8,18,31,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "70":System.out.println("Name :-- Ytterbium");       
+                          System.out.println("Atomic no. :-- 70");
+                          System.out.println("Atomic Weight :-- 173");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,8,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "71":System.out.println("Name :-- Lutetium");       
+                          System.out.println("Atomic no. :-- 71");
+                          System.out.println("Atomic Weight :-- 175");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,9,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "72":System.out.println("Name :-- Hafnium");       
+                          System.out.println("Atomic no. :-- 72");
+                          System.out.println("Atomic Weight :-- 178.5");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,10,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "73":System.out.println("Name :-- Tantalum");       
+                          System.out.println("Atomic no. :-- 73");
+                          System.out.println("Atomic Weight :-- 181");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,11,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "74":System.out.println("Name :-- Tungsten");       
+                          System.out.println("Atomic no. :-- 74");
+                          System.out.println("Atomic Weight :-- 184");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,12,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "75":System.out.println("Name :-- Rhenium");       
+                          System.out.println("Atomic no. :-- 75");
+                          System.out.println("Atomic Weight :-- 186");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,13,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "76":System.out.println("Name :-- Osmium");       
+                          System.out.println("Atomic no. :-- 76");
+                          System.out.println("Atomic Weight :-- 186");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,14,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "77":System.out.println("Name :-- Iridium");       
+                          System.out.println("Atomic no. :-- 77");
+                          System.out.println("Atomic Weight :-- 192");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,15,2");
+                          System.out.println("Metal \n");
+                          break;
+                case "78":System.out.println("Name :-- Platinum");       
+                          System.out.println("Atomic no. :-- 78");
+                          System.out.println("Atomic Weight :-- 195");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,17,1");
+                          System.out.println("Metal \n");
+                          break;
+                case "79":System.out.println("Name :-- Gold");       
+                          System.out.println("Atomic no. :-- 79");
+                          System.out.println("Atomic Weight :-- 197");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,18,1");
+                          System.out.println("Metal \n");
+                          break;
+                case "80":System.out.println("Name :-- Mercury");       
+                          System.out.println("Atomic no. :-- 80");
+                          System.out.println("Atomic Weight :-- 201");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,18,2");
+                          System.out.println("Metal \n");
+                          break;
+                 case "81":System.out.println("Name :-- Thallium");       
+                          System.out.println("Atomic no. :-- 81");
+                          System.out.println("Atomic Weight :-- 204");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,18,3");
+                          System.out.println("Metal \n");
+                          break;
+                 case "82":System.out.println("Name :-- lead");       
+                          System.out.println("Atomic no. :-- 82");
+                          System.out.println("Atomic Weight :-- 207");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,18,4");
+                          System.out.println("Metal \n");
+                          break;
+                 case "83":System.out.println("Name :-- Bismuth");       
+                          System.out.println("Atomic no. :-- 83");
+                          System.out.println("Atomic Weight :-- 208.9");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,18,5");
+                          System.out.println("Metal \n");
+                          break;
+                 case "84":System.out.println("Name :-- Polonium");       
+                          System.out.println("Atomic no. :-- 84");
+                          System.out.println("Atomic Weight :-- 209");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,18,6");
+                          System.out.println("Metal \n");
+                          break;
+                 case "85":System.out.println("Name :-- Astatine");       
+                          System.out.println("Atomic no. :-- 85");
+                          System.out.println("Atomic Weight :-- 210");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,18,7");
+                          System.out.println("Metal \n");
+                          break;
+                 case "86":System.out.println("Name :-- Radon");       
+                          System.out.println("Atomic no. :-- 86");
+                          System.out.println("Atomic Weight :-- 222");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,18,8");
+                          System.out.println("Metal \n");
+                          break;
+                 case "87":System.out.println("Name :-- Francium");       
+                          System.out.println("Atomic no. :-- 87");
+                          System.out.println("Atomic Weight :-- 223");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,18,8");
+                          System.out.println("Metal \n");
+                          break;
+                 case "88":System.out.println("Name :-- Radium");       
+                          System.out.println("Atomic no. :-- 88");
+                          System.out.println("Atomic Weight :-- 226");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,18,8");
+                          System.out.println("Metal \n");
+                          break;
+                 case "89":System.out.println("Name :-- Actinium");       
+                          System.out.println("Atomic no. :-- 89");
+                          System.out.println("Atomic Weight :-- 227");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,18,9");
+                          System.out.println("Metal \n");
+                          break;
+                 case "90":System.out.println("Name :-- Thorium");       
+                          System.out.println("Atomic no. :-- 90");
+                          System.out.println("Atomic Weight :-- 261");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,18,10");
+                          System.out.println("Metal \n");
+                          break;
+                 case "91":System.out.println("Name :-- Protactinium");       
+                          System.out.println("Atomic no. :-- 91");
+                          System.out.println("Atomic Weight :-- 262");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,20,9");
+                          System.out.println("Metal \n");
+                          break;
+                 case "92":System.out.println("Name :-- Uranium");       
+                          System.out.println("Atomic no. :-- 92");
+                          System.out.println("Atomic Weight :-- 263");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,21,9");
+                          System.out.println("Metal \n");
+                          break;
+                 case "93":System.out.println("Name :-- Neptumium");       
+                          System.out.println("Atomic no. :-- 93");
+                          System.out.println("Atomic Weight :-- 262");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,22,9");
+                          System.out.println("Metal \n");
+                          break;          
+                 case "94":System.out.println("Name :-- Puromium");       
+                          System.out.println("Atomic no. :-- 94");
+                          System.out.println("Atomic Weight :-- 265");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,24,8");
+                          System.out.println("Metal \n");
+                          break;
+                 case "95":System.out.println("Name :-- Americium");       
+                          System.out.println("Atomic no. :-- 95");
+                          System.out.println("Atomic Weight :-- 267");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,25,8");
+                          System.out.println("Metal \n");
+                          break;
+                 case "96":System.out.println("Name :-- Curium");       
+                          System.out.println("Atomic no. :-- 96");
+                          System.out.println("Atomic Weight :-- 195");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,25,9");
+                          System.out.println("Metal \n");
+                          break;          
+                 case "97":System.out.println("Name :-- Berkelium");       
+                          System.out.println("Atomic no. :-- 97");
+                          System.out.println("Atomic Weight :-- 201");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,27,8");
+                          System.out.println("Metal \n");
+                          break;
+                 case "98":System.out.println("Name :-- Califorium");       
+                          System.out.println("Atomic no. :-- 98");
+                          System.out.println("Atomic Weight :-- 201");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,28,8");
+                          System.out.println("Metal \n");
+                          break;
+                 case "99":System.out.println("Name :-- Einsteinium");       
+                          System.out.println("Atomic no. :-- 99");
+                          System.out.println("Atomic Weight :-- 201");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,29,8");
+                          System.out.println("Metal \n");
+                          break;
+                 case "100":System.out.println("Name :-- Fermium");       
+                          System.out.println("Atomic no. :-- 100");
+                          System.out.println("Atomic Weight :-- 201");
+                          System.out.println("Electronic Configuration :-- 2,8,18,32,30,8");
+                          System.out.println("Metal \n");
+                          break;          
+                default :System.out.println("Invalid choice Try Again \n");
+                break;
+            }
+        }while(!(ch.equalsIgnoreCase("0"))); 
+    } 
+    private static void math()
+    {
+        int chc=0;
+        double f=0,s=0;
+        String a="";
+        do
+        {
+           System.out.println("Press Any key to Start Session or '0' to stop maths session");
+           a=sc.next();
+           if(a.equalsIgnoreCase("0"))
+            {
+                System.out.println("Bye, Hope u come back again");
+                   break;
+            }
+           else
+           {
+              try
+              {
+                  System.out.println("Enter 1st No.");
+                f=sc.nextDouble();
+                System.out.println("Enter 2nd No.");
+                s=sc.nextDouble();
+                if(f!=0&&s!=0)
+               {
+                      System.out.println("Sum of no.s :- "+(f+s));
+                      System.out.println("Difference of no.s :- "+(f-s));
+                      System.out.println("Product of no.s :- "+(f*s));
+                      System.out.println("Division of no.s :- "+(f/s));
+                      System.out.println("Remainder of Division of no.s :- "+((int)f%(int)s));
+                      System.out.println("Power (first no. raise to second no.):- "+(Math.pow(f,s)));
+                      System.out.println("Power (second no. raise to first no.):- "+(Math.pow(s,f)));
+                      System.out.println("Sqaure Root of 1st no. is :- "+(Math.sqrt(f)));
+                      System.out.println("Square Root of 2nd no. is :- "+(Math.sqrt(s)));
+                      System.out.println("Sqaure of 1st no. is :- "+(Math.pow(f,2)));
+                      System.out.println("Sqaure of 2nd no. is :- "+(Math.pow(s,2)));
+                      System.out.println("Cube of 1st no. is :- "+(Math.pow(f,3)));
+                      System.out.println("Cube of 2nd no. is :- "+(Math.pow(s,3)));
+                      System.out.println("Cube root of 1st no. is :- "+(Math.pow(f,(1.0/3.0))));
+                      System.out.println("Cube Root of 2nd no. is :- "+(Math.pow(s,(1.0/3.0)))+"\nHope u Enjoyed \n");
+               }
+               else
+                 System.out.println("Dividing by 0 not Possible");
+              }
+              catch(Exception e)
+              {
+                  System.out.println("Plz Enter Only Numbers \n");
+                  a=sc.next();
+              }
+           }
+        }while(true);
+    }
+    private static void bio()
+    {
+        String c="";
+        do
+        {
+            System.out.println("Enter your choice");
+            System.out.println("1. RBC's");               
+            System.out.println("2. WBC's");
+            System.out.println("3. Platelets");
+            System.out.println("Enter 1,2,3 (0:- To stop biology session)");
+            c=sc.next();
+            switch(c)
+            {
+                case "0":System.out.println("Bye \n");
+                         break;
+                case "1":System.out.println("Red Blood Cells");
+                         System.out.println("Alternate: Erythrocytes");               
+                         System.out.println("Produced in:   Marrow of long bones,ribs,breast bone");
+                         System.out.println("Destroyed in:  Spleen,liver,bone marrow");
+                         System.out.println("Life Span:  120 days");
+                         System.out.println("Shape: Biconcave \n");
+                         break;
+                case "2":System.out.println("White Blood Cells");
+                         System.out.println("Alternate: Leukocytes");               
+                         System.out.println("Produced in:   Bone Marrow");
+                         System.out.println("Destroyed in:  Lymphatic System");
+                         System.out.println("Life Span:  20 days");
+                         System.out.println("Shape: Amoeboid \n");
+                         break;         
+                case "3":System.out.println("Blood Platelets");
+                         System.out.println("Alternate: Thrombocytes");               
+                         System.out.println("Produced in: Red bone marrow  ");
+                         System.out.println("Destroyed in:  Spleen");
+                         System.out.println("Life Span:  5 days");
+                         System.out.println("Shape: Round non nucleated \n");
+                         break;
+                default:System.out.println("Invalid chace , try Again \n");
+                        break;
+            }   
+         }while(!(c.equalsIgnoreCase("0")));
+    }
+    private static void eng()
+    {
+        String cha="",ac="";
+        int sp=0,c=0,v=0,d=0,s=0;
+        cha=sc.nextLine();
+         do
+         {
+             System.out.println("Enter a sentence(Enter \"Exit\" to Stop English Session)");
+             cha=sc.nextLine();
+            if (cha.equalsIgnoreCase("Exit"))
+            {
+                System.out.println("Bye \n");
+                break;
+            }
+            else
+            {
+             ac=cha;
+             cha=cha.toUpperCase();
+             for(int i=0;i<cha.length();i++)
+             {
+                char ch=cha.charAt(i);
+                if(Character.isLetter(ch))
+                {
+                    if((ch!='A')&&(ch!='E')&&(ch!='I')&&(ch!='O')&&(ch!='U'))
+                    c++;
+                    else if((ch=='A')||(ch=='E')||(ch=='I')||(ch=='O')||(ch=='U'))
+                    v++;
+                }
+                else if(Character.isDigit(ch))
+                d++;
+                else if(ch==' ')
+                s++;
+                else
+                sp++;
+             }
+             System.out.println("Sentence : "+ac);
+             System.out.println("No. of consonants = "+c);
+             System.out.println("No. of Vowels = "+v);
+             System.out.println("No. of alphabets = "+(c+v));
+             System.out.println("No. of digits = "+d);
+             System.out.println("No. of spaces = "+s);
+             System.out.println("No. of Special characters = "+sp +"\n");
+             sp=0;c=0;v=0;d=0;s=0;
+            }
+         }while(!(cha.equalsIgnoreCase("Exit")));
+    }
+    private static void geo()
+    {
+        String a="";
+        a=sc.nextLine();
+        do
+       {
+            System.out.println("Enter Name of State or Union Territory of India (0 to stop Geography Session)");
+            a=sc.nextLine();
+             if(a.equalsIgnoreCase("0"))
+             System.out.println("Bye");
+             else if(a.equalsIgnoreCase("Andaman and Nicobar"))
+             System.out.println("Capital :- Port Blair \n");
+             else if(a.equalsIgnoreCase("Andhra Pradesh"))
+             System.out.println("Capital :- Hyderabad \n");
+             else if(a.equalsIgnoreCase("Arunachal Pradesh"))
+             System.out.println("Capital :- Itanagar \n");
+             else if(a.equalsIgnoreCase("Assam"))
+             System.out.println("Capital :- Dispur \n");
+             else if(a.equalsIgnoreCase("Bihar"))
+             System.out.println("Capital :- Patna \n");
+             else if(a.equalsIgnoreCase("Chandigarh"))
+             System.out.println("Capital :- Chandigarh \n");
+             else if(a.equalsIgnoreCase("Chattisgarh"))
+             System.out.println("Capital :- Raipur \n");
+             else if(a.equalsIgnoreCase("Dadra and Nagar Havelli"))
+             System.out.println("Capital :- Silvassa \n");
+             else if(a.equalsIgnoreCase("Daman and Diu"))
+             System.out.println("Capital :- Daman \n");
+             else if(a.equalsIgnoreCase("Goa"))
+             System.out.println("Capital :- Panaji \n");
+             else if(a.equalsIgnoreCase("Gujarat"))
+             System.out.println("Capital :- Gandhinagar \n");
+             else if(a.equalsIgnoreCase("Haryana"))
+             System.out.println("Capital :- Chandigarh \n");
+             else if(a.equalsIgnoreCase("Himachal Pradesh"))
+             System.out.println("Capital :- Shimla \n");
+             else if(a.equalsIgnoreCase("Jammu and Kashmir"))
+             System.out.println("Capital :- Jammu \n");
+             else if(a.equalsIgnoreCase("Jharkhand"))
+             System.out.println("Capital :- Ranchi \n");
+             else if(a.equalsIgnoreCase("Karnataka"))
+             System.out.println("Capital :- Bengaluru \n");
+             else if(a.equalsIgnoreCase("Kerala"))
+             System.out.println("Capital :- Thiruvanthapuram \n");
+             else if(a.equalsIgnoreCase("Lakshadweep"))
+             System.out.println("Capital :- Kavaratti \n");
+             else if(a.equalsIgnoreCase("Madhya Pradesh"))
+             System.out.println("Capital :- Bhopal \n");
+             else if(a.equalsIgnoreCase("Maharashtra"))
+             System.out.println("Capital :- Mumbai \n");
+             else if(a.equalsIgnoreCase("Manipur"))
+             System.out.println("Capital :- Imphal \n");
+             else if(a.equalsIgnoreCase("Meghalaya"))
+             System.out.println("Capital :- Shillong \n");
+             else if(a.equalsIgnoreCase("Mizoram"))
+             System.out.println("Capital :- Aizawl \n");
+             else if(a.equalsIgnoreCase("Nagaland"))
+             System.out.println("Capital :- Kohima \n");
+             else if(a.equalsIgnoreCase("Delhi"))
+             System.out.println("Capital :- New Delhi \n");
+             else if(a.equalsIgnoreCase("Odisha"))
+             System.out.println("Capital :- Bhubaneswar \n");
+             else if(a.equalsIgnoreCase("Pondicherry"))
+             System.out.println("Capital :- Pondicherry \n");
+             else if(a.equalsIgnoreCase("Punjab"))
+             System.out.println("Capital :- Chandigarh \n");
+             else if(a.equalsIgnoreCase("Rajasthan"))
+             System.out.println("Capital :- Jaipur \n");
+             else if(a.equalsIgnoreCase("Sikkim"))
+             System.out.println("Capital :- Gangtok \n");
+             else if(a.equalsIgnoreCase("Tamil Nadu"))
+             System.out.println("Capital :- Chennai \n");
+             else if(a.equalsIgnoreCase("Telangana"))
+             System.out.println("Capital :- Hyderabad \n");
+             else if(a.equalsIgnoreCase("Tripura"))
+             System.out.println("Capital :- Agartala \n");
+             else if(a.equalsIgnoreCase("Uttar Pradesh"))
+             System.out.println("Capital :- Lucknow \n");
+             else if(a.equalsIgnoreCase("Uttarakhand"))
+             System.out.println("Capital :- Dehradun \n");
+            else if(a.equalsIgnoreCase("West Bengal"))
+            System.out.println("Capital :- Kolkata \n");
+            else
+            System.out.println("Invalid , Try Again \n");
+       }while(!(a.equalsIgnoreCase("0")));
+    }
+     private static void his()
+    {
+        String z="";
+        do
+        {
+            System.out.println("Enter yr Choice of Monument (Enter 0 to Stop History session)");
+            System.out.println("1.Varanasi Ghats ");
+            System.out.println("2.Taj Mahal");
+            System.out.println("3.Harmandir Sahib");
+            System.out.println("4.Mahabodhi Temple");
+            System.out.println("5.Brihadishwara Temple");
+            System.out.println("6.Shore Temple");
+            System.out.println("7.Bahai Temple");
+            System.out.println("8.Hawa Mahal");
+            System.out.println("9.Chhatrapati Shivaji Terminus");
+            System.out.println("10.Victoria Memorial");
+            z=sc.next();
+            switch(z)
+            {
+                case "0":System.out.println("Bye , Hope U come Again to see me ");
+                         break;
+                case "1":System.out.println("Varanasi Ghats");
+                         System.out.println("Ghats in Varanasi are the most holiest places of the city situated along with the banks \n of holy river Ganges. There are around 85 Ghat in the holiest city and used for Ganges \n Aarti,bathing,cremation and morning meditation. The burning Ghats of Varanasi are the \n most popular tourist attraction, during the Aarti of river Ganges at Dashashwamedh Ghat. \n Varanasi also known as Banaras and Kashi is one of the oldest living city of India as well \n as in the world. \n");
+                         break;
+                case "2":System.out.println("Taj Mahal");
+                         System.out.println("The Taj Mahal, a beautiful white marble Monument located in the city of Agra on the banks \n of the holy river Yamuna in the state of Uttar Pradesh. Taj Mahal is the finest example \n of combines elements of Mughal,Persian, Ottoman Turkish and Indian architectural styles. \n It is one of the eight wonders of the world and the jewel of Muslim art in India. \n Fatehpur Sikri is another historic site in the state, the first planned city of the Mughals. \n");          
+                         break;
+                case "3":System.out.println("Harmandir Sahib");
+                         System.out.println("The Golden Temple is known as Harmandir Sahib is a Sikh Gurdwara located in the Amritsar \n , Punjab. Shri Darbar Shaib is the holiest shrine and most famous pilgrimage place for Sikhs. \n Harmandir Sahib is one of the most sacred places in India, a Holy Granth Sahib is always \n present inside the temple. \n");
+                         break;
+                case "4":System.out.println("Mahabodhi Temple");
+                         System.out.println("The Mahabodhi Temple or Great Awakening Temple is a Buddhist temple located in the \n Gaya district of Bihar state. Mahabodhi Mahavihara Bodhgaya Temple is one of the ancient \n and most important shrines of  Buddhist in India. The site contains a Mahabodhi Tree, \n Lord Buddha stupa and the monastery called Bodhimanda Vihara. Mahabodhi Temple is count on \n one of the 7 wonders of India.Nalanda is another Historic Monuments site in the state. \n");
+                         break;
+                case "5":System.out.println("Brihadishwara Temple");
+                         System.out.println("Brihadishwara Temple also called Periya Koyil or Big Temple is one of the India’s largest \n temple located in the Thanjavur at the Indian state of Tamil Nadu. The Rajarajeswaram \n temple is dedicated to Lord Shiva and the best temple build by Cholas along with Airavatesvara \n Temple. Brihadishwara Temple and Airavatesvara Temple are two World Heritage in \n Tamil Nadu India. \n");
+                         break;
+                case "6":System.out.println("Shore Temple");
+                         System.out.println("The Shore Temple is situated on the shore of the Bay of Bengal at Mahabalipuram,in the \n state of Tamil Nadu. Shore Temple is the oldest structural rock cut temple in \n south India built with blocks of granite. The shrines are dedicated to great God Lord \n Shiva and Lord Vishnu. Mahabalipuram is world famous for number of Monuments, which are \n UNESCO World Heritage Site. \n");
+                         break;
+                case "7":System.out.println("Bahai Temple");
+                         System.out.println("The Lotus Temple of Delhi is called Bahai Temples, situated near kalka Ji.Lotus Temple is \n a house of Worship for every religion and best place for meditation and peace. \n Bahai Faith is spiritual unity of all humankind, there are eight continental Houses \n of Worship have been built around the world. Lotus Temple is one of them and the prominent attraction in Delhi. \n");
+                         break;
+                case "8":System.out.println("Hawa Mahal");
+                         System.out.println("The great monuments of the royal Rajputs of Rajasthan, Hawa Mahal also Palace of Winds \n is situated in the heart of pink city and the capital of Rajasthan,Jaipur. The pyramid \n shape five-story palace is constructed by red and pink sandstone by  \n Maharaja Sawai Pratap Singh for women’s of royal families. Hawa Mahal is one of the major \n tourist attraction of Jaipur as well as in the royal state Rajasthan. \n");
+                         break;
+                case "9":System.out.println("Chhatrapati Shivaji Terminus");
+                         System.out.println("Chhatrapati Shivaji Terminus or Victoria Terminus is a historic railway station \n situated in the dream city of India Mumbai,Maharashtra. Victoria Terminus is one of the \n most busiest railway station in India and headquarters of the Central Railways. \n Taj Mahal Palace Mumbai, a five-star hotel is another Historical Monuments located in \n Mumbai city. \n");
+                         break;
+                case "10":System.out.println("Victoria Memorial");
+                          System.out.println("The Victoria Memorial Hall is located in the capital of West Bengal, Kolkata and \n dedicated to Queen Victoria. Victoria Memorial is one of the major tourist attraction of \n  Kolkata and serves as a museum with great collection of manuscripts,paintings and \n sculptures of the British period. Victoria Memorial was declared as one of the \n UNESCO World Heritage Site in India. \n");
+                         break;         
+                default :System.out.println("Invalid Monument no. , Try Again \n");
+                         break;
+            }
+        }while(!(z.equalsIgnoreCase("0")));
+    }
+    private static void hindi()
+    {
+        String y="";
+        do
+        {
+            System.out.println("Enter Choice 1,2,3(Type 0 to Stop Hindi Session)");
+            System.out.println("1. Munshi Premchand");
+            System.out.println("2. Jayshanker Prashad");
+            System.out.println("3. Harivansh Rai Bachchan");
+            y=sc.next();
+            switch(y)
+            {
+                case "0":System.out.println("Bye");
+                         break;
+                case "1":System.out.println("Munshi Premchand books");
+                         System.out.println("1.Nirmala \n2.Gabban \n3.Drone \n4.Godan \n5.Kaphan \n6.Istipha \n");
+                         break;
+                case "2":System.out.println("Jayshanker Prashad books");
+                         System.out.println("1.Emperor Chandragupta Maurya \n2.Waterfall  \n3.Ajatashatru \n4.Lahar \n5.Aasu \n6.Kamayani \n");
+                         break;
+                case "3":System.out.println("Harivansh Rai Bachchan books");
+                         System.out.println("1.Stair \n2.New old windows \n3.Language foreign to your price \n4.Madhushala \n5.Madhukalash \n");
+                         break;         
+                default:System.out.println("Invalid choice, try again");
+                        break;
+             }
+         }while(!(y.equalsIgnoreCase("0")));
+     }     
+    private static void phy()
+     {
+         String m="";
+         double i=0,r=0;
+         do
+         {
+             System.out.println("Enter your choice 1,2,3,4,5,6,7(Enter 0 to stop Physics session)");
+             System.out.println("1.Melting");
+             System.out.println("2.Freezing");
+             System.out.println("3.Vaporisation");
+             System.out.println("4.Condensation");
+             System.out.println("5.Sublimation");
+             System.out.println("6.Solidification");
+             System.out.println("7.Get Refractive Index");
+             m=sc.next();
+             switch(m)
+             {
+                 case "0":System.out.println("Bye");
+                          break;
+                 case "1":System.out.println("The Change from solid to liquid phase on heating at a constant temperature is called Melting \n");
+                          break;
+                 case "2":System.out.println("The Change from liquid to solid phase on heating at a constant temperature is called Freezing \n");
+                          break;
+                 case "3":System.out.println("The Change from liquid to vapour phase on heating at a constant temperature is called Vaporisation \n");
+                          break;
+                 case "4":System.out.println("The Change from vapour to liquid phase on heating at a constant temperature is called Condensation \n");
+                          break;
+                 case "5":System.out.println("The direct change from solid to vapour phase on heating at a constant temperature is called Sublimation \n");
+                          break;
+                 case "6":System.out.println("The direct change from vapour to solid phase on heating at a constant temperature is called Solidification \n");
+                          break;
+                 case "7":System.out.println("Enter Angle of Incidence");
+                          i=sc.nextDouble();
+                          System.out.println("Enter Angle of Refraction");
+                          r=sc.nextDouble();
+                          System.out.println("Refractive Index :- "+((Math.sin(Math.toRadians(i))/Math.sin(Math.toRadians(r)))));
+                          break;
+                 default:System.out.println("Invalid Choice, Try Again\n");
+                          break;    
+              }
+           }while(!(m.equalsIgnoreCase("0")));
+        }
+    private static void dfinal() throws IOException
+    {
+        System.out.println("Welcome to our Computer Project 2015 \n");
+        String cho="";
+        do
+        {
+            System.out.println("Enter your choice (1,2,3,4,5,6,7,8,9,10,)");
+            System.out.println("1. Chemistry");
+            System.out.println("2. Maths");
+            System.out.println("3. Biology");
+            System.out.println("4. English");
+            System.out.println("5. GeoGraphy");
+            System.out.println("6. History");
+            System.out.println("7. Hindi");
+            System.out.println("8. Physics");
+            System.out.println("9. Optional");
+            System.out.println("10. Exit");
+            cho=sc.next();
+            String enter="";
+            switch(cho)
+            {
+                case "1":chem();
+                         break;
+                case "2":math();
+                         break;
+                case "3":bio();
+                         break;
+                case "4":eng();
+                         break;
+                case "5":geo();
+                         break;         
+                case "6":his();
+                         break;
+                case "7":hindi();
+                         break;
+                case "8":phy();
+                         break;
+                case "9":opt();
+                         break;         
+                case "10":System.out.println("Good Bye");
+                         System.out.println("Press Any Key to Exit");
+                         enter=sc.nextLine();
+                         System.exit(0);
+                         break;         
+                default :System.out.println("Invalid chace , Try Again \n");
+                         break;
+            }
+        }while(!(cho.equalsIgnoreCase("9")));
+    }
+    static AudioPlayer ap = AudioPlayer.player;
+    static AudioStream as;
+    static ContinuousAudioDataStream loop = null;
+    public Project(String music)
+    {
+        try
+        {
+            InputStream input = new FileInputStream("./"+music);
+            as = new AudioStream(input);
+            AudioData ad = as.getData();
+            loop = new ContinuousAudioDataStream(ad);
+        }catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+    private static void play()
+    {
+        ap.start(as);
+    }
+    private static void stop()
+    {
+        ap.start(as);
+    }
+    private static void playL()
+    {
+        ap.start(loop);
+    }
+    private static void stopL()
+    {
+        ap.start(loop);
+    }    
+    private static void opt()
+    {
+        String chc="";
+        do
+        {
+           System.out.println("Enter Celcius(C) or Fahrenheit(F)  [Press (E) to Exit]");
+           chc=sc.next();
+            switch(chc)
+            {
+                case "C"  :
+                case "c"  : System.out.println("Enter Celcius Value");
+                            System.out.println("Farenheit Value :--  "+(Temp.toFah(sc.nextDouble()))+"\n");
+                            break;
+                case "F" :
+                case "f" :  System.out.println("Enter Fahrenheit Value");
+                            System.out.println("Celcius Value :-- "+(Temp.toCel(sc.nextDouble()))+"\n");
+                            break;    
+                case "E" : 
+                case "e" :  System.out.println("Good Bye");
+                            break;
+                default  : System.out.println("Invalid Choice Try Again \n");
+                           break;
+           }
+        }while(!(chc.equalsIgnoreCase("E")));
+    }
+    public static void main(String args[]) throws IOException , Throwable
+    {
+        for(int i=0;i<=150;i++)
+        {  
+            Clip clip = AudioSystem.getClip();
+            AudioInputStream inputStream = AudioSystem.getAudioInputStream(Project.class.getResourceAsStream("a.wav"));
+            clip.open(inputStream);
+            clip.start(); 
+            dfinal();
+        }
+    }
+}

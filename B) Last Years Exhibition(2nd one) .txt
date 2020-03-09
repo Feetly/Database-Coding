@@ -1,0 +1,398 @@
+import java.util.*;
+import java.io.*;
+import javax.sound.sampled.*;
+import sun.audio.*;
+public class MarksSheet
+{
+    static Scanner sc=new Scanner(System.in);
+    private static String name[];
+    private static int engMarks1[];
+    private static int engMarks2[];
+    private static int his[];
+    private static int geo[];
+    private static int math[];
+    private static int chem[];
+    private static int bio[];
+    private static int phy[];
+    private static int hin[];
+    private static int opt[];
+    private static int n=0;
+    private static int tm1=0;
+    private static int tm2=0;
+    private static int tm3=0;
+    private static int tm4=0;
+    private static int tm5=0;
+    private static int tm6=0;
+    private static int tm7=0;
+    private static int tm8=0;
+    private static int tm9=0;
+    private static int tm10=0;
+    private static String c="";
+    private static String sub="";
+    private static String b="";
+    private static void acc()
+    {
+        System.out.println("Hii, Dhruv Programs Welcomes You ");
+        System.out.println("Do U Want To Create A New Marks-Sheet (Y or N) ");
+        c=sc.next();
+      if(c.equalsIgnoreCase("Y"))
+      {
+        System.out.println("Enter No. of Students in yr Class");
+        n=sc.nextInt();
+        name=new String[n];
+        System.out.println("Enter Name (Alphabetical Order) (Continously Write All THe Name In One Line or Copy The Previous name of students line from the Marks-Sheet.txt )");
+        for(int i=0;i<n;i++)
+        {
+            name[i]=sc.next();
+        }
+        System.out.print("\f");
+        engMarks1=new int[n];
+        engMarks2=new int[n];
+        his=new int[n];
+        geo=new int[n];
+        math=new int[n];
+        chem=new int[n];
+        bio=new int[n];
+        phy=new int[n];
+        hin=new int[n];
+        opt=new int[n];
+      }
+      else
+      {
+          System.out.println("Bye , Hope U Come Back Soon");
+          System.out.println("Press Any Key to Exit");
+          b=sc.next();
+          b=sc.nextLine();
+          System.exit(0);
+      }
+    }
+    private static void accMarksEng1()
+    {
+        System.out.println("Do u want to add everyones marks in English I(Y or N)");
+        c=sc.next();
+       if(c.equalsIgnoreCase("Y"))
+       {
+        System.out.println("How Much Marks English I Test was ?");
+        tm1=tm1+sc.nextInt(); 
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter Marks of "+name[i]+" In English I Test ");
+            engMarks1[i]=engMarks1[i]+sc.nextInt(); 
+        }
+       }
+       System.out.print("\f");
+    }
+    private static void accMarksEng2()
+    {
+         System.out.println("Do u want to add everyones marks in English II(Y or N)");
+        c=sc.next();
+       if(c.equalsIgnoreCase("Y"))
+       {
+        System.out.println("How Much Marks English II Test was ?");
+        tm2=tm2+sc.nextInt();
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter Marks of "+name[i]+" In English II Test ");
+            engMarks2[i]=engMarks2[i]+sc.nextInt(); 
+        }
+       }  
+       System.out.print("\f");
+    }
+    private static void accMarksHis()
+    {
+         System.out.println("Do u want to add everyones marks in History(Y or N)");
+        c=sc.next();
+       if(c.equalsIgnoreCase("Y"))
+       {
+        System.out.println("How Much Marks History Test was ?");
+        tm3=tm3+sc.nextInt();
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter Marks of "+name[i]+" In History Test ");
+            his[i]=his[i]+sc.nextInt(); 
+        }
+       }
+       System.out.print("\f");
+    }  
+    private static void accMarksGeo()
+    {
+         System.out.println("Do u want to add everyones marks in Geography(Y or N)");
+        c=sc.next();
+       if(c.equalsIgnoreCase("Y"))
+       {
+        System.out.println("How Much Marks Geography Test was ?");
+        tm4=tm4+sc.nextInt();
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter Marks of "+name[i]+" In Geography Test ");
+            geo[i]=geo[i]+sc.nextInt(); 
+        }
+       }
+       System.out.print("\f");
+    }
+    private static void accMarksMath()
+    {
+        System.out.println("Do u want to add everyones marks in Maths (Y or N)");
+        c=sc.next();
+       if(c.equalsIgnoreCase("Y"))
+       {
+        System.out.println("How Much Marks Maths Test was ?");
+        tm5=tm5+sc.nextInt(); 
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter Marks of "+name[i]+" In Maths Test ");
+            math[i]=math[i]+sc.nextInt(); 
+        }
+       }
+       System.out.print("\f");
+    }
+    private static void accMarksChem()
+    {
+        System.out.println("Do u want to add everyones marks in Chemistry (Y or N)");
+        c=sc.next();
+       if(c.equalsIgnoreCase("Y"))
+       {
+        System.out.println("How Much Marks Chemistry Test was ?");
+        tm6=tm6+sc.nextInt(); 
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter Marks of "+name[i]+" In English I Test ");
+            chem[i]=chem[i]+sc.nextInt(); 
+        }
+       }
+       System.out.print("\f");
+    }
+    private static void accMarksBio()
+    {
+        System.out.println("Do u want to add everyones marks in Biology (Y or N)");
+        c=sc.next();
+       if(c.equalsIgnoreCase("Y"))
+       {
+        System.out.println("How Much Marks Biology Test was ?");
+        tm7=tm7+sc.nextInt(); 
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter Marks of "+name[i]+" In Biology Test ");
+            bio[i]=bio[i]+sc.nextInt(); 
+        }
+       }
+       System.out.print("\f");
+    }
+    private static void accMarksPhy()
+    {
+        System.out.println("Do u want to add everyones marks in Physics(Y or N)");
+        c=sc.next();
+       if(c.equalsIgnoreCase("Y"))
+       {
+        System.out.println("How Much Marks Physics Test was ?");
+        tm8=tm8+sc.nextInt(); 
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter Marks of "+name[i]+" In Physics Test ");
+            phy[i]=phy[i]+sc.nextInt(); 
+        }
+       }
+       System.out.print("\f");
+    }
+    private static void accMarksHin()
+    {
+        System.out.println("Do u want to add everyones marks in Hindi (Y or N)");
+        c=sc.next();
+       if(c.equalsIgnoreCase("Y"))
+       {
+        System.out.println("How Much Marks Hindi Test was ?");
+        tm9=tm9+sc.nextInt(); 
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter Marks of "+name[i]+" In Hindi Test ");
+            hin[i]=hin[i]+sc.nextInt(); 
+        }
+       }
+       System.out.print("\f");
+    }
+    private static void accMarksOpt()
+    {
+        System.out.println("Do u want to add everyones marks in Optional (Y or N)");
+        c=sc.next();
+       if(c.equalsIgnoreCase("Y"))
+       {
+        System.out.println("How Much Marks Optional Test was ?");
+        tm10=tm10+sc.nextInt(); 
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter Marks of "+name[i]+" In Optional Test ");
+            opt[i]=opt[i]+sc.nextInt(); 
+        }
+       }
+       System.out.print("\f");
+    }
+    private static void show()
+    {
+        System.out.println("\fWelcome To Yr Marks-Sheet");
+        System.out.println("Test Marks of English I  :- "+tm1);
+        System.out.println("Test Marks of English II :- "+tm2);
+        System.out.println("Test Marks of History    :- "+tm3);
+        System.out.println("Test Marks of Geography  :- "+tm4); 
+        System.out.println("Test Marks of Maths      :- "+tm5);
+        System.out.println("Test Marks of Chemistry  :- "+tm6);
+        System.out.println("Test Marks of Biology    :- "+tm7);
+        System.out.println("Test Marks of Physics    :- "+tm8);
+        System.out.println("Test Marks of Hindi      :- "+tm9);
+        System.out.println("Test Marks of Optional   :- "+tm10);
+        System.out.println("Student Eng I Eng II His  Geo  Math  Chemi  Bio  Phy  Hin  Opt");
+        for(int i=0;i<n;i++)
+            System.out.println(name[i]+"\t"+engMarks1[i]+"\t"+engMarks2[i]+"     "+his[i]+"   "+geo[i]+"    "+math[i]+"      "+chem[i]+"     "+bio[i]+"    "+phy[i]+"     "+hin[i]+"   "+opt[i]);
+    }
+    private static void Work()
+    {
+      do
+      {
+        System.out.println("Which Subject Test Was Taken(1,2,3,4 or 0 To exit)");
+        System.out.println("1.  English I ");
+        System.out.println("2.  English II ");
+        System.out.println("3.  History ");
+        System.out.println("4.  Geography ");
+        System.out.println("5.  Maths ");
+        System.out.println("6.  Chemistry ");
+        System.out.println("7.  Biology ");
+        System.out.println("8.  Physics ");
+        System.out.println("9.  Hindi ");
+        System.out.println("10. Optional ");
+        System.out.println("0.  Exit ");
+        sub=sc.next();
+        if(sub.equalsIgnoreCase("1"))
+        accMarksEng1();
+        else if(sub.equalsIgnoreCase("2"))
+        accMarksEng2();
+        else if(sub.equalsIgnoreCase("3"))
+        accMarksHis();
+        else if(sub.equalsIgnoreCase("4"))
+        accMarksGeo();
+        else if(sub.equalsIgnoreCase("5"))
+        accMarksMath();
+        else if(sub.equalsIgnoreCase("6"))
+        accMarksChem();
+        else if(sub.equalsIgnoreCase("7"))
+        accMarksBio();
+        else if(sub.equalsIgnoreCase("8"))
+        accMarksPhy();
+        else if(sub.equalsIgnoreCase("9"))
+        accMarksHin();
+        else if(sub.equalsIgnoreCase("10"))
+        accMarksOpt();
+        else if(sub.equalsIgnoreCase("0"))
+        {
+            System.out.println("Thx");
+            break;
+        }
+        else
+         System.out.println("Invalid Choice , Try Again");
+      }while(!(sub.equalsIgnoreCase("0")));
+      show();
+    }
+    private static void log() throws IOException
+    { 
+       Calendar cal = Calendar.getInstance();
+       Date utilDate = new Date(); 
+       cal.setTime(utilDate);      
+       PrintWriter out = new PrintWriter(new FileWriter("D://Mark-Sheet.txt", true), true);
+       out.write("==> Welcome To Yr Marks-Sheet ( "+(utilDate.toString())+" ) <== "+System.getProperty( "line.separator" ));
+       out.write("Students Name List :-- ");
+       for(int i=0;i<n;i++)
+            out.write(name[i]+" ");
+       out.write(System.getProperty( "line.separator" ));      
+       out.write("Test Marks of English I  :- "+(tm1)+System.getProperty( "line.separator" ));
+       out.write("Test Marks of English II :- "+(tm2)+System.getProperty( "line.separator" ));
+       out.write("Test Marks of History    :  "+(tm3)+System.getProperty( "line.separator" ));
+       out.write("Test Marks of Geography  :- "+(tm4)+System.getProperty( "line.separator" ));
+       out.write("Test Marks of Maths      :- "+(tm5)+System.getProperty( "line.separator" ));
+       out.write("Test Marks of Chemistry  :- "+(tm6)+System.getProperty( "line.separator" ));
+       out.write("Test Marks of Biology    :- "+(tm7)+System.getProperty( "line.separator" ));
+       out.write("Test Marks of Physics    :- "+(tm8)+System.getProperty( "line.separator" ));
+       out.write("Test Marks of Hindi      :- "+(tm9)+System.getProperty( "line.separator" ));
+       out.write("Test Marks of Optional   :- "+(tm10)+System.getProperty( "line.separator" ));
+       out.write(" "+System.getProperty( "line.separator" ));
+       out.write("Tabulated Order Marks-list "+System.getProperty( "line.separator" ));
+       out.write("Student Eng I Eng II  His  Geo   Math  Chemi   Bio   Phy   Hin   Opt"+System.getProperty( "line.separator" ));
+       for(int i=0;i<n;i++)
+            out.write(name[i]+"\t"+engMarks1[i]+"\t"+engMarks2[i]+"      "+his[i]+"    "+geo[i]+"\t "+math[i]+"\t"+chem[i]+"      "+bio[i]+"     "+phy[i]+"\t   "+hin[i]+"      "+opt[i]+System.getProperty( "line.separator" ));
+        out.write("\tThank You And Have a Nice Day"+System.getProperty( "line.separator" ));
+        System.out.println("A File Named Mark-Sheet Have Been Created(In Local Disk: 'D')"); 
+        System.out.println("\t\tThank You And Have a Nice Day");
+        out.write(" "+System.getProperty( "line.separator" ));   
+        out.close();
+        System.out.println("Press Any Key to Exit");
+        c=sc.nextLine();
+        c=sc.next();
+        System.exit(0);
+    }
+    private static String path;
+    private static void read() throws IOException
+    {
+        String []ar;
+        path="D://Mark-Sheet.txt";
+        try 
+        {
+            FileReader fr=new FileReader(path);
+            BufferedReader tr=new BufferedReader(fr);
+            int nol=rline();
+            ar=new String[nol];
+            int i;
+            for (i=0;i<nol;i++) 
+            {
+                ar[i]=tr.readLine();
+                System.out.println(ar[i]);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+    private static int rline() throws IOException 
+    {
+        FileReader ftr=new FileReader(path);
+        BufferedReader br=new BufferedReader(ftr);
+        String aLine;
+        int noli=0;
+        while ( ( aLine = br.readLine( ) ) != null ) 
+        {
+           noli++;
+        }
+        br.close();
+        return noli;
+    }
+    public static void main(String args[]) throws IOException , Throwable
+    {
+        Clip clip = AudioSystem.getClip();
+        AudioInputStream inputStream = AudioSystem.getAudioInputStream(MarksSheet.class.getResourceAsStream("a.wav"));
+        clip.open(inputStream);
+        clip.start(); 
+        System.out.println("Are u Running Program 1st time (Y or N)");
+        b=sc.next();
+       if(b.equalsIgnoreCase("Y"))
+       {
+        acc();
+        Work();
+        log();
+       }
+       else if(b.equalsIgnoreCase("N"))
+       {
+           System.out.println("Do u want to See the Previous Marks-Sheets (Y or N)('N' To create a new Marks list)");
+           b=sc.next();
+           if(b.equalsIgnoreCase("Y"))
+           {
+               read();
+               acc();
+               Work();
+               log();
+           }
+           else if(b.equalsIgnoreCase("N"))
+           {
+             acc();
+             Work();
+             log();   
+           }
+        }
+    }
+}

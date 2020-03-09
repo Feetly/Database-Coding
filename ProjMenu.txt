@@ -1,0 +1,356 @@
+import java.util.*;
+public class ProjMenu
+{
+    Scanner scan=new Scanner(System.in);
+    int rno[],m1[],m2[],m3[],n;
+    String name[];
+    double perc[];
+    private void menu()
+    {
+        System.out.println("\f Menu");
+        System.out.println("1. Accept Values");
+        System.out.println("2. Display Values");
+        System.out.println("3. Sort");
+        System.out.println("4. Grade Calculate");
+        System.out.println("5. Search Record ");
+        System.out.println("6. Modify Values ");
+        System.out.println("7. No. of Passing vs Failing Students ");
+        System.out.println("8. Average total marks");
+        System.out.println("9. Difficulty level of Exam");
+        System.out.println("10. No. of students above average and below average");  
+        System.out.println("11. Get Toppers Data ");
+        System.out.println("12. Name of one to get lowest marks ");
+        System.out.println("13. Compare with topper");
+        System.out.println("14. Remarks/Complains");
+        System.out.println("15. Exit");
+    }
+    private void accept()
+    {
+        System.out.println("Enter no. of students ?");
+        n=scan.nextInt();
+        rno=new int[n];
+        m1=new int[n];
+        m2=new int[n];
+        m3=new int[n];
+        name=new String[n];
+        perc=new double[n];
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter rollno ");
+            rno[i]=scan.nextInt();
+            System.out.println("Enter name ");
+            name[i]=scan.next();
+            System.out.println("Enter marks1 ");
+            m1[i]=scan.nextInt();
+            System.out.println("Enter marks 2 ");
+            m2[i]=scan.nextInt();
+            System.out.println("Enter marks 3 ");
+            m3[i]=scan.nextInt();
+            perc[i]=(m1[i]+m2[i]+m3[i])/3.0;
+        }
+    }
+    private void show()
+    {
+        for(int i=0;i<n;i++)
+        {   
+            System.out.println("Roll no "+"\t"+"Name "+"\t"+"English "+"\t"+"Hindi "+"\t"+"Maths"+"\t"+"%age");
+            System.out.println(rno[i]+"\t"+name[i]+"\t"+m1[i]+"\t"+m2[i]+"\t"+m3[i]+"\t"+perc[i]);
+        }
+    }
+    private void sort()
+    {
+        for(int i=0;i<rno.length;i++)
+        {
+            for(int j=i+1;j<rno.length;j++)
+            {
+                if(rno[i]>rno[j])
+                {
+                    int temp1=rno[i];
+                    rno[i]=rno[j];
+                    rno[j]=temp1;
+                    int temp2=m1[i];
+                    m1[i]=m1[j];
+                    m1[j]=temp2;
+                    int temp3=m2[i];
+                    m2[i]=m2[j];
+                    m2[j]=temp3;
+                    int temp4=m3[i];
+                    m3[i]=m3[j];
+                    m3[j]=temp4;
+                    double temp5=perc[i];
+                    perc[i]=perc[j];
+                    perc[j]=temp5;
+                    String temp6=name[i];
+                    name[i]=name[j];
+                    name[j]=temp6;
+                }
+           }
+           System.out.println(rno[i]+"\t"+name[i]+"\t"+m1[i]+"\t"+m2[i]+"\t"+m3[i]+"\t"+perc[i]);
+      }
+    }
+    private void calcGrade()
+    {
+        for(int i=0;i<n;i++)
+        {
+            if(perc[i]>=85 && perc[i]<=100)  
+                System.out.println(name[i]+"\t"+perc[i]+"\t"+"Excellent");
+            else if(perc[i]>=75 && perc[i]<=84)
+                System.out.println(name[i]+"\t"+perc[i]+"\t"+"Distinction");
+            else if(perc[i]>=60 && perc[i]<=74)
+                System.out.println(name[i]+"\t"+perc[i]+"\t"+"First Class");
+            else if(perc[i]>=40 && perc[i]<=59)
+                System.out.println(name[i]+"\t"+perc[i]+"\t"+"Pass");
+            else
+                System.out.println(name[i]+"\t"+perc[i]+"\t"+"Poor");
+        }                
+    }      
+    private void search()
+    {
+        System.out.println("Enter rollno ");
+        int rollno=scan.nextInt();
+        int flag=-1;
+        for(int i=0;i<rno.length;i++)           
+        {
+            if(rno[i]==rollno)
+            {
+                System.out.println("Search Sucessful ");
+                System.out.println(rollno+"\t"+name[i]+"\t"+m1[i]+"\t"+m2[i]+"\t"+m3[i]+"\t"+perc[i]);
+                flag=1;                     
+            }
+        }
+        if(flag==-1)
+               System.out.println("Sorry not found ");  
+    }
+    private void modify()
+    {
+        System.out.println("Enter rollno of the student who's data is to be modified");
+        int m=scan.nextInt();
+        int f=-1;
+        for(int i=0;i<rno.length;i++)           
+        {
+            if(rno[i]==m)
+                f=i;                     
+        }
+        if(f==-1)
+            System.out.println("Sorry rollno not found ");
+        else
+        {
+            System.out.println("His Name ?");
+            name[f]=scan.next();
+            System.out.println("His marks1 ?");
+            m1[f]=scan.nextInt();
+            System.out.println("His marks2 ?");
+            m2[f]=scan.nextInt();
+            System.out.println("His marks3 ?");
+            m3[f]=scan.nextInt();
+            perc[f]=(m1[f]+m2[f]+m3[f])/3.0;
+            sort();
+        }
+    }
+    private void pasFai()
+    {
+        int jp=0,fail=0;
+        for(int i=0;i<n;i++)
+        {
+            if(perc[i]==35)
+                jp++;
+            if(perc[i]<=35)
+                fail++;
+        }
+        System.out.println("Total Students :- "+n);
+        System.out.println("Students to pass :- "+(n-fail));
+        System.out.println("Students to fail :- "+fail);
+        System.out.println("Students to just pass :- "+jp);
+    }
+    private void avg()
+    {
+        double av=0;
+        for(int i=0;i<n;i++)
+            av+=perc[i];
+        av=av/n;
+        System.out.println("Average Total marks of Students :- "+av);
+    }
+    private void difi()
+    {
+        double av=0;
+        for(int i=0;i<n;i++)
+            av+=perc[i];
+        av=av/n;
+        System.out.println("Difficulty lvl of total overall exam :- "+(100-av)+"%");
+    }
+    private void noOfAvg()
+    {
+        int an=0;
+        double av=0;
+        for(int i=0;i<n;i++)
+            av+=perc[i];
+        av=av/n;
+        for(int i=0;i<n;i++)
+        {
+            if(perc[i]>=(int)av)
+                an++;
+        }
+        System.out.println("No. of more than averaged or equal to averaged students :- "+an);
+        System.out.println("No. of less than averaged students :- "+(n-an));
+    }
+    private void topp()
+    {
+        int tm=(int)perc[0];int pos=0;
+        for(int i=0;i<n;i++)
+        {
+            if((int)perc[i]>tm)
+            {
+                tm=(int)perc[i];
+                pos=i;
+            } 
+        }
+        System.out.println("Name of Topper :- "+name[pos]);
+        System.out.println("Rollno of Topper :- "+rno[pos]);
+        System.out.println("Marks1 of Topper :- "+m1[pos]);
+        System.out.println("Marks2 of Topper :- "+m2[pos]);
+        System.out.println("Marks3 of Topper :- "+m3[pos]);
+        System.out.println("%age of Topper :- "+perc[pos]);
+        double av=0;
+        for(int i=0;i<n;i++)
+            av+=perc[i];
+        av=av/n;
+        System.out.println("%age above average student :- "+(perc[pos]-av));
+    }
+    private void loser()
+    {
+        int tm=(int)perc[0];int pos=0;
+        for(int i=0;i<n;i++)
+        {
+            if((int)perc[i]<tm)
+            {
+                tm=(int)perc[i];
+                pos=i;
+            } 
+        }
+        System.out.println("Name of Loser :- "+name[pos]);
+        System.out.println("Rollno of Loser :- "+rno[pos]);
+        System.out.println("Marks1 of Loser :- "+m1[pos]);
+        System.out.println("Marks2 of Loser :- "+m2[pos]);
+        System.out.println("Marks3 of Loser :- "+m3[pos]);
+        System.out.println("%age of Loser :- "+perc[pos]);
+        double av=0;
+        for(int i=0;i<n;i++)
+            av+=perc[i];
+        av=av/n;
+        System.out.println("%age below average student :- "+(av-perc[pos]));
+    }
+    private void compare()
+    {
+        System.out.println("Enter rollno to be compared with topper");
+        int r=scan.nextInt();int pl=0;
+        int tm=(int)perc[0];int pos=0;
+        for(int i=0;i<n;i++)
+        {
+            if((int)perc[i]>tm)
+            {
+                tm=(int)perc[i];
+                pos=i;
+            } 
+            if(rno[i]==r)
+                pl=i;
+        }
+        System.out.println("Name :- "+name[pl]);
+        System.out.println("He is "+(perc[pl]-perc[pos])+" %age/marks behind topper");
+    }
+    private void remark()
+    {
+        System.out.println("If u have any remarks or complains regarding \n us we will look upon yr problem \n and try to do the needful.");
+        String throwInDustbin=scan.nextLine();
+        throwInDustbin=scan.nextLine();
+        System.out.println("Thanks for yr Support");
+    }
+    private void prog()
+    {
+      try
+      {   int chc=0;String tp="";
+          do
+          {
+              menu();
+              System.out.println("Enter the choice");
+              chc=scan.nextInt();
+              switch(chc)
+              {
+                  case 1 : accept();
+                           System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                           tp=scan.next();
+                  break;
+                  case 2 : show();
+                           System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                           tp=scan.next();
+                  break;
+                  case 3 : sort();
+                           System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                           tp=scan.next(); 
+                  break;
+                  case 4 : calcGrade();
+                           System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                           tp=scan.next(); 
+                  break;
+                  case 5 : search();
+                           System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                           tp=scan.next(); 
+                  break;
+                  case 6 : modify();
+                           System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                           tp=scan.next(); 
+                  break;
+                  case 7 : pasFai();
+                           System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                           tp=scan.next(); 
+                  break;
+                  case 8 : avg();
+                           System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                           tp=scan.next(); 
+                  break;
+                  case 9 : difi();
+                           System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                           tp=scan.next();     
+                  break;
+                  case 10 : noOfAvg();
+                            System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                            tp=scan.next();    
+                  break; 
+                  case 11 : topp();
+                            System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                            tp=scan.next();    
+                  break;
+                  case 12 : loser();
+                            System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                            tp=scan.next();    
+                  break;
+                  case 13 : compare();
+                            System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                            tp=scan.next();
+                  break;
+                  case 14 : remark();
+                            System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                            tp=scan.next();
+                  break;
+                  case 15 : System.out.println("GOODBYE");
+                            System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                            tp=scan.next();
+                            System.exit(0);
+                  break;               
+                  default : System.out.println("Invalid choice");
+                            System.out.println("Press Any Key to Continue (Press 1 & Hit Enter)");
+                            tp=scan.next();
+                  break;         
+              }
+          }while(chc!=15);
+      }catch(Exception e)
+      {
+        System.out.println("An Unexcepted error was encountered 0x0086");
+        System.out.println("Close, restart and run the program again with proper instructions");
+      }
+    }
+    public static void main(String args[])
+    {
+        ProjMenu pm=new ProjMenu();
+        pm.prog();
+    }
+}
